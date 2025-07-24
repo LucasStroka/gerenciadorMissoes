@@ -43,10 +43,10 @@ async function startFunction(params) {
                 filtrarPrioridade() 
                 break;
             case "6":
-                
+                Ranking();
                 break;
             case "7":
-                
+                listarTripulantes();
                 break;
             case "8":
                 console.log("Saindo...");
@@ -66,7 +66,7 @@ function concludeMission(){
     } else {
         for(let i = 0; i < arrayMission.length; i++){
             console.log('========= MISSÕES LISTADAS =========');
-            console.log(`${i + 1} - Nome: ${arrayMission.nomeMissao}, Destino: ${arrayMission.destino}, Prioridade: ${arrayMission.prioridade}, Tripulantes: ${arrayMission.arrayTripulantes}, Status: ${arrayMission.stats}`);
+            console.log(`${i + 1} - Nome: ${arrayMission[i].nomeMissao}, Destino: ${arrayMission[i].destino}, Prioridade: ${arrayMission[i].prioridade}, Tripulantes: ${arrayMission[i].arrayTripulantes}, Status: ${arrayMission[i].stats}`);
         }
         rl.question('Escreva o número da missão que você quer concluir: ', (input) => {
             const index = parseInt(input) - 1;
@@ -233,11 +233,15 @@ function filtrarPrioridade() {
 }
 
 function listarTripulantes(){
+    console.log('========= TRIPULANTES EM CADA MISSAO =========');
     for(let i = 0; i < arrayMission.length; i++){
-        console.log('========= TRIPULANTES EM CADA MISSAO =========');
-        console.log(`${i + 1}.\nNome da Missao: ${arrayMission.nomeMissao}\nTripulantes: ${arrayMission.arrayTripulantes}\n\n`);
+        console.log(`\n${i + 1} - Missao: ${arrayMission[i].nomeMissao}`);
+        for (let j = 0; j < arrayMission[i].arrayTripulantes.length; j++) {
+            console.log(`#${j+1} - ${arrayMission[i].arrayTripulantes[j]}`);
+        }
     }
     console.log('Digite ENTER para retornar ao menu.');
     rl.question('', startFunction);
 }
+
 startFunction();
