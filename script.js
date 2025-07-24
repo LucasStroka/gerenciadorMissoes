@@ -17,9 +17,7 @@ let mission = {
     stats : " "
 }
 
-const arrayMission = [];
-
-function concluirMissao(){
+function listar(){
     if(arrayMission.length == 0){
         console.log('Sem missões para concluir.');
         menu();
@@ -28,16 +26,7 @@ function concluirMissao(){
             console.log('========= MISSÕES LISTADAS =========');
             console.log(`${i + 1} - Nome: ${arrayMission.nomeMissao}, Destino: ${arrayMission.destino}, Prioridade: ${arrayMission.prioridade}, Tripulantes: ${arrayMission.arrayTripulantes}, Status: ${arrayMission.stats}`);
         }
-        rl.question('Escreva o número da missão que você quer concluir: ', (input) => {
-            const index = parseInt(input) - 1;
-            if(isNaN(index) || index < 0 || index > arrayMission.length){
-                console.log('Opcao invalida!!');
-                menu();
-            } else {
-                arrayMission[index].stats = 'concluida';
-                console.log('Missao concluida com sucesso!!');
-                menu();
-            }
-        });
+        console.log('Digite ENTER para retornar ao menu.');
+        rl.question('', startFunction);
     }
 }
