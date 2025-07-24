@@ -11,7 +11,7 @@ function askQuestion(query) {
 
 
 
-const arrayMission = []
+const arrayMission = [];
 
 let cond = true;
 async function startFunction(params) {
