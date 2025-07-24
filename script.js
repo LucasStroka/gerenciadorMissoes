@@ -179,7 +179,7 @@ startFunction();
 function filtrarPrioridade() {
     if (arrayMission.length === 0) {
         console.log('Nenhuma missão em andamento!\nPressione ENTER para voltar...');
-        rl.question('', startFuction);
+        rl.question('', startFunction);
         return;
     }
 
