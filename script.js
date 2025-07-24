@@ -9,8 +9,6 @@ function askQuestion(query) {
     });
 }
 
-
-
 const arrayMission = [];
 
 let cond = true;
@@ -174,7 +172,6 @@ async function edit() {
     arrayMission[idEdit-1] = mission
     startFunction();
 }
-startFunction();
 
 function filtrarPrioridade() {
     if (arrayMission.length === 0) {
@@ -233,3 +230,13 @@ function filtrarPrioridade() {
         })
     }
 }
+
+function listarTripulantes(){
+    for(let i = 0; i < arrayMission.length; i++){
+        console.log('========= TRIPULANTES EM CADA MISSAO =========');
+        console.log(`${i + 1}.\nNome da Missao: ${arrayMission.nomeMissao}\nTripulantes: ${arrayMission.arrayTripulantes}\n\n`);
+    }
+    console.log('Digite ENTER para retornar ao menu.');
+    rl.question('', startFunction);
+}
+startFunction();
