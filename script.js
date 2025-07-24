@@ -19,7 +19,7 @@ let mission = {
 
 const arrayMission = [];
 
-function concludeMission(){
+function concluirMissao(){
     if(arrayMission.length == 0){
         console.log('Sem missões para concluir.');
         menu();
