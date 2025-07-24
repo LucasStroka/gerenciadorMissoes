@@ -17,16 +17,11 @@ let mission = {
     stats : " "
 }
 
-function listar(){
-    if(arrayMission.length == 0){
-        console.log('Sem missões para concluir.');
-        menu();
-    } else {
-        for(let i = 0; i < arrayMission.length; i++){
-            console.log('========= MISSÕES LISTADAS =========');
-            console.log(`${i + 1} - Nome: ${arrayMission.nomeMissao}, Destino: ${arrayMission.destino}, Prioridade: ${arrayMission.prioridade}, Tripulantes: ${arrayMission.arrayTripulantes}, Status: ${arrayMission.stats}`);
-        }
-        console.log('Digite ENTER para retornar ao menu.');
-        rl.question('', startFunction);
+function listarTripulantes(){
+    for(let i = 0; i < arrayMission.length; i++){
+        console.log('========= TRIPULANTES EM CADA MISSAO =========');
+        console.log(`${i + 1}.\nNome da Missao: ${arrayMission.nomeMissao}\nTripulantes: ${arrayMission.arrayTripulantes}\n\n`);
     }
+    console.log('Digite ENTER para retornar ao menu.');
+    rl.question('', startFunction);
 }
