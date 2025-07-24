@@ -120,7 +120,6 @@ async function addMission() {
 
 async function list() {
     console.log("-=".repeat(15));
-
     if (arrayMission.length == 0) {
         console.log("Não Tem Missões Registradas");
         
@@ -139,8 +138,6 @@ Status: ${arrayMission[i].stats}`);
                 }
         }
     }
-    
-
 }
 
 async function edit() {
@@ -215,4 +212,24 @@ function filtrarPrioridade() {
         console.log('\nPressione ENTER para voltar...');
         rl.question('', startFunction);
     });
+}
+
+ function Ranking(){
+    if (arrayMission === 0){
+        console.log("Nenhuma missão em andamento. \nPrecione ENTER para voltar...")
+        rl.question('', StartFunction)
+    }else{
+        rl.question('Qual destino você quer o ranking?: ', (input) => {
+        let certo = input.toLowerCase().trim()
+        let ranking = 0
+            for(i = 0; i < arrayMission.length; i++){
+                if(arrayMission[i].includes(certo)){
+                    ranking++
+                }
+            }
+            console.log(`Missão: ${certo} \nRanking: ${ranking} missões`)
+            console.log("\nPrecione ENTER para voltar...")
+            rl.question('', MenuPrincipal)
+        })
+    }
 }
