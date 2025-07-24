@@ -42,7 +42,7 @@ async function startFunction(params) {
                 concludeMisson();
                 break;
             case "5":
-                
+                filtrarPrioridade() 
                 break;
             case "6":
                 
