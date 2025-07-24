@@ -37,7 +37,7 @@ async function startFunction(params) {
                 edit();
                 break;
             case "4":
-                concludeMisson();
+                concludeMission();
                 break;
             case "5":
                 filtrarPrioridade() 
@@ -80,6 +80,7 @@ function concludeMission(){
             }
         });
     }
+}
 
 async function addMission() {
     console.log(`
