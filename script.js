@@ -31,11 +31,11 @@ function concludeMission(){
         rl.question('Escreva o número da missão que você quer concluir: ', (input) => {
             const index = parseInt(input) - 1;
             if(isNaN(index) || index < 0 || index > arrayMission.length){
-                console.log('Invalid option!!');
+                console.log('Opcao invalida!!');
                 menu();
             } else {
                 arrayMission[index].stats = 'concluida';
-                console.log('Mission succesfully marked as done!');
+                console.log('Missao concluida com sucesso!!');
                 menu();
             }
         });
